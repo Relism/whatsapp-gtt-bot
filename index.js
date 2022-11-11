@@ -1,10 +1,7 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs');
-const {
-	Client,
-	LocalAuth
-} = require('whatsapp-web.js');
+const { Client } = require('whatsapp-web.js');
 
 require('date-time-format-timezone');
 
@@ -108,10 +105,6 @@ client.on('qr', (qr) => {
 	qrcode.generate(qr, {
 		small: true
 	});
-});
-
-client.on('authenticated', () => {
-	console.log('AUTHENTICATED');
 });
 
 client.on('ready', () => {
