@@ -123,7 +123,7 @@ client.on('message', (message) => {
 	rawAuthor = message.from
 	messaggio = rawMessage.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '');
 	author = rawAuthor.slice(0, -5);
-	api_token = "..."
+	api_token = process.env.api_token
 	if (messaggio.startsWith("fermata") || messaggio.startsWith("Fermata")) {
 		if (messaggio.startsWith("fermata")) {
 			fermata = messaggio.replace('fermata ', '')
