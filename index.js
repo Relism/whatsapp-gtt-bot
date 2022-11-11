@@ -1,7 +1,10 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs');
-const { Client } = require('whatsapp-web.js');
+const {
+	Client,
+	LocalAuth
+} = require('whatsapp-web.js');
 
 require('date-time-format-timezone');
 
@@ -107,6 +110,10 @@ client.on('qr', (qr) => {
 	});
 });
 
+client.on('authenticated', () => {
+	console.log('AUTHENTICATED');
+});
+
 client.on('ready', () => {
 	console.log('Client is ready!');
 });
@@ -116,7 +123,7 @@ client.on('message', (message) => {
 	rawAuthor = message.from
 	messaggio = rawMessage.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '');
 	author = rawAuthor.slice(0, -5);
-	api_token = process.env.api_token
+	api_token = "IFgYWblP65CO0Ky5Rwt2zbGKybCrTq5qnaD7vwzXVrWO1EQ50L"
 	if (messaggio.startsWith("fermata") || messaggio.startsWith("Fermata")) {
 		if (messaggio.startsWith("fermata")) {
 			fermata = messaggio.replace('fermata ', '')
