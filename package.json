@@ -14,6 +14,7 @@
         "@types/node": "^18.0.6",
         "axios": "^1.1.3",
         "date-time-format-timezone": "^1.0.22",
+        "express": "^4.18.2",
         "node-fetch": "^3.2.6",
         "qrcode-terminal": "^0.12.0",
         "whatsapp-web.js": "github:Relism/whatsapp-web.js"
