@@ -16,6 +16,6 @@
         "date-time-format-timezone": "^1.0.22",
         "node-fetch": "^3.2.6",
         "qrcode-terminal": "^0.12.0",
-        "whatsapp-web.js": "^1.18.2"
+        "whatsapp-web.js": "github:Relism/whatsapp-web.js"
     }
 }
