@@ -1,6 +1,9 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs');
+const express = require('express')
+const app = express()
+const port = 8080
 /*const {
 	Client,
 	LocalAuth
@@ -108,6 +111,13 @@ const client = new Client({
     authStrategy: new NoAuth()
 });
  
+app.get('/', (req, res) => {
+	res.send('Hello World!')
+  })
+  
+  app.listen(port, () => {
+	console.log(`Webserver listening on port ${port}`)
+  })
 
 client.initialize();
 
@@ -129,7 +139,7 @@ client.on('message', (message) => {
 	rawMessage = message.body
 	rawAuthor = message.from
 	messaggio = rawMessage.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, '');
-	author = rawAuthor.slice(0, -5);
+	author = "+" + rawAuthor.slice(0, -5);
 	api_token = "IFgYWblP65CO0Ky5Rwt2zbGKybCrTq5qnaD7vwzXVrWO1EQ50L"
 	if (messaggio.startsWith("fermata") || messaggio.startsWith("Fermata")) {
 		if (messaggio.startsWith("fermata")) {
