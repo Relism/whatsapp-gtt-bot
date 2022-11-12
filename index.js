@@ -1,11 +1,12 @@
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
 const fs = require('fs');
-const { Client, NoAuth } = require('whatsapp-web.js');
 /*const {
 	Client,
 	LocalAuth
 } = require('whatsapp-web.js');*/
+
+const { Client, NoAuth } = require('whatsapp-web.js');
 
 require('date-time-format-timezone');
 
@@ -99,9 +100,14 @@ function newLog(logContent){
     });
 }
 
+/*const client = new Client({
+	authStrategy: new LocalAuth(),
+});*/
+
 const client = new Client({
     authStrategy: new NoAuth()
 });
+ 
 
 client.initialize();
 
